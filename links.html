@@ -133,6 +133,14 @@ $("l-fb").href = "https://facebook.com/" + CONFIG.facebook;
 $("v-tel").textContent = CONFIG.telefonoVisible;
 $("copy").addEventListener("click", e => {
   navigator.clipboard.writeText(CONFIG.telefonoVisible).then(() => { e.target.textContent = "Copiado"; setTimeout(() => e.target.textContent = "Copiar", 1600); })
-    .catch(() => { const r = document.createRange(); r.selectNodeContents($("v-tel")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });\n});\n$(\"l-apps\").addEventListener(\"click\", () => {\n  const btn = $(\"l-apps\"), sub = $(\"apps-sub\");\n  const open = btn.getAttribute(\"aria-expanded\") === \"true\";\n  btn.setAttribute(\"aria-expanded\", String(!open));\n  sub.hidden = open;\n});\n</script>
+    .catch(() => { const r = document.createRange(); r.selectNodeContents($("v-tel")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
+});
+$("l-apps").addEventListener("click", () => {
+  const btn = $("l-apps"), sub = $("apps-sub");
+  const open = btn.getAttribute("aria-expanded") === "true";
+  btn.setAttribute("aria-expanded", String(!open));
+  sub.hidden = open;
+});
+</script>
 </body>
 </html>
