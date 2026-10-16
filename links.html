@@ -51,6 +51,13 @@ footer{text-align:center;color:#6f6f75;font-size:.68rem;letter-spacing:.14em;tex
 @keyframes rise{from{transform:translateY(24px);opacity:.001}to{transform:none;opacity:1}}
 .head>*,.link{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 .link:nth-child(1){animation-delay:.2s}.link:nth-child(2){animation-delay:.28s}.link:nth-child(3){animation-delay:.36s}.link:nth-child(4){animation-delay:.44s}.link:nth-child(5){animation-delay:.52s}.link:nth-child(6){animation-delay:.6s}
+button.link{font:inherit;background:transparent;width:100%;text-align:left;cursor:pointer}
+#l-apps .chev{transition:transform .3s ease}
+#l-apps[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.sublinks{display:flex;flex-direction:column;gap:10px}
+.sublinks[hidden]{display:none}
+.subhead{font-size:.66rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:6px 2px 0}
+.link.sub{padding:13px 18px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -79,9 +86,25 @@ footer{text-align:center;color:#6f6f75;font-size:.68rem;letter-spacing:.14em;tex
     <a class="link" id="l-fb" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
       <span><b>Facebook</b><small>Perfil profesional</small></span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <a class="link" id="l-apps" href="./apps.html">
+    <button class="link" id="l-apps" type="button" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-      <span><b>Descarga las apps</b><small>AIL Plus y Child Safe Kit gratis</small></span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span><b>Descarga las apps</b><small>AIL Plus y Child Safe Kit gratis</small></span><svg class="ar chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="sublinks" id="apps-sub" hidden>
+      <div class="subhead">AIL Plus</div>
+      <a class="link sub" href="https://apps.apple.com/us/app/ail-plus/id1502363340" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <span><b>App Store</b><small>AIL Plus para iPhone</small></span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="link sub" href="https://play.google.com/store/apps/details?id=com.newbenefits.ailplus&hl=en_US" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <span><b>Google Play</b><small>AIL Plus para Android</small></span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="subhead">Child Safe Kit</div>
+      <a class="link sub" href="https://apps.apple.com/us/app/child-safe-kit/id1296310200?l=es-MX" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <span><b>App Store</b><small>Child Safe Kit para iPhone</small></span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="link sub" href="https://play.google.com/store/apps/details?id=com.torchmarkcorp.childsafekit&hl=en" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <span><b>Google Play</b><small>Child Safe Kit para Android</small></span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
   </nav>
 
   <div class="tel">Teléfono <b id="v-tel"></b><button type="button" id="copy">Copiar</button></div>
@@ -110,8 +133,6 @@ $("l-fb").href = "https://facebook.com/" + CONFIG.facebook;
 $("v-tel").textContent = CONFIG.telefonoVisible;
 $("copy").addEventListener("click", e => {
   navigator.clipboard.writeText(CONFIG.telefonoVisible).then(() => { e.target.textContent = "Copiado"; setTimeout(() => e.target.textContent = "Copiar", 1600); })
-    .catch(() => { const r = document.createRange(); r.selectNodeContents($("v-tel")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
-});
-</script>
+    .catch(() => { const r = document.createRange(); r.selectNodeContents($("v-tel")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });\n});\n$(\"l-apps\").addEventListener(\"click\", () => {\n  const btn = $(\"l-apps\"), sub = $(\"apps-sub\");\n  const open = btn.getAttribute(\"aria-expanded\") === \"true\";\n  btn.setAttribute(\"aria-expanded\", String(!open));\n  sub.hidden = open;\n});\n</script>
 </body>
 </html>
